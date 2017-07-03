@@ -1,0 +1,22 @@
+$hover : #dfdddd;
+
+#recipeList-container{
+    width: 50%; height: 100%;
+    max-width: 820px;
+    margin: auto auto;
+    #addRecipe:hover{
+        background-color: $hover !important;
+    }
+    #addRecipe{
+        width: 100%;
+        float: left;
+        background-color: white;
+        display: flex;
+        height: 70px;
+        justify-content: center;
+        align-items: center;
+        font-size: -webkit-xxx-large;
+        cursor: pointer;
+        border: 1px solid #e6e6e6;
+    }
+}

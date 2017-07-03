@@ -1,0 +1,57 @@
+#picture-modal, #picture-modal #picture-options, #picture-modal #picture-options .picture-option, #picture-modal .picture-edit .picture-button {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#picture-modal {
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  float: left;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10; }
+  #picture-modal .modal-content {
+    width: calc(100% - 100px);
+    height: calc(100% - 100px);
+    background-color: #fafafa; }
+  #picture-modal #myCanvas {
+    transform-origin: left top;
+    position: absolute;
+    left: 50px;
+    top: 130px;
+    border-bottom: 1px solid #e6e6e6;
+    border-top: 1px solid #e6e6e6;
+    background-color: white; }
+  #picture-modal #picture-options {
+    width: 100%;
+    height: 80px; }
+    #picture-modal #picture-options .picture-option {
+      width: 40%;
+      float: left; }
+      #picture-modal #picture-options .picture-option .option-caption {
+        width: 40%;
+        float: left;
+        font-size: x-large; }
+      #picture-modal #picture-options .picture-option input {
+        height: 10px;
+        font-size: medium; }
+      #picture-modal #picture-options .picture-option select {
+        height: 40px;
+        font-size: medium; }
+  #picture-modal .picture-edit {
+    width: 60%;
+    position: absolute;
+    height: 70px;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0); }
+    #picture-modal .picture-edit .picture-button {
+      width: calc(50% - 0.5px);
+      float: left;
+      height: 95%; }
+      #picture-modal .picture-edit .picture-button.save {
+        border-right: 1px solid #e6e6e6; }

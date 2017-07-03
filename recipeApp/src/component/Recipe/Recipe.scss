@@ -1,0 +1,322 @@
+$backgroundColor: white;
+$otherCaptionsColor: black;
+$topColor: #b5b5b5;
+$blackOpacity: rgba(0, 0, 0, 0.5);
+$textAreaLightsText:  #e5e5e5;
+$borderColor: #e6e6e6;
+
+@keyframes animLike {
+  0% {
+    font-size: 55px;
+    height: 150px;
+    width: 150px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: inherit;
+  }
+ 100% {
+    font-size: 15px;
+    height: 47px;
+    width: 47px;
+    left: calc(100% - 59px);;
+    top: 2px;
+    transform: translate(0%, 0%);
+    visibility: inherit;
+  }
+}
+
+@keyframes animUnlike {
+  0% {
+    font-size: 15px;
+    height: 47px;
+    width: 47px;
+    left: calc(100% - 59px);
+    top: 2px;
+    transform: translate(0%, 0%);
+    visibility: inherit;
+  }
+ 100% {
+    font-size: 55px;
+    height: 150px;
+    width: 150px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    visibility: inherit;
+  }
+}
+
+%flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-container{
+    background-color: $backgroundColor;
+    border: 1px solid $borderColor;
+    margin-bottom: 20px;
+    width: 100%;
+    float: left;
+    textarea{
+        font-family: 'Josefin Sans', sans-serif;
+        border: 1px solid $borderColor;
+        font-size: medium;
+        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:    $textAreaLightsText;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    $textAreaLightsText;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:  $textAreaLightsText;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:    $textAreaLightsText;
+        }
+        &::-ms-input-placeholder { /* Microsoft Edge */
+            color:   $textAreaLightsText;
+        }
+    }
+    .options{
+       width: calc(100% - 10px);
+        height: 42px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 10px 0 0 10px;
+        background-color: white;
+        .remove{
+            float: left;
+             cursor: pointer;
+        }
+        .edit{
+            float: left;
+            margin-left: 15px;
+            cursor: pointer;
+        }
+        .heart{
+            width: 50px;
+            position: absolute;
+            top: 3px;
+            right: 10px;
+            cursor: pointer;
+            .like{
+                    @extend %likes;
+                    &.red{
+                        color: white
+                    }
+                    &.whit{
+                        color: black;
+                    }
+            }
+        }
+        %likes {
+                position: absolute;
+                top: 15px;
+                text-align: center;
+                width: 100%;
+        }
+    }
+    .recipe-image{
+            float: left;
+            width: 100%;
+            max-width: 100%;
+            input{
+                display: none;
+            }
+            label{
+                width: 100%;
+            }
+            img{
+                max-height: 450px;
+            }
+            &.new img{
+                cursor: pointer;
+            }
+            &:hover .change-image{ display: block };
+            .change-image{
+                position : absolute;
+                display:none;
+                top:20%; 
+                margin:0 auto; left:0px;
+                right:0px;
+                z-index: 9;
+                width: 100%;
+                height: 120px;
+                &.new{
+                    position: relative;
+                    @extend %flex;
+                }
+                img{
+                    cursor: pointer;
+                }
+                .image{
+                    float: left;
+                    width: 75px;
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    &.paint{
+                        left: 60%;
+                    }
+                    &.add{
+                        left: 40%;
+                    }
+                }
+                .image:hover{
+                    width: 90px;
+                }
+            }
+    }
+    .recipe-top{
+        width: 100%;
+        float: left;
+        position: relative;
+        .animHeart{
+            position: absolute;
+            visibility: hidden;
+            span{
+                color: white;
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                transform: translate(-50%, -50%);
+            }
+            &.like{
+                animation: animLike 1.5s;
+            }
+            &.unlike{
+                animation: animUnlike 1.5s; 
+            }
+
+        }
+        .recipe-image.new{
+            height: 150px;
+            @extend %flex;
+        }
+        .recipe-caption{
+            width: 100%;
+            float: left;
+            position: absolute;
+            background-color:rgba(0,0,0,0.5);
+            font-family: 'Josefin Sans', sans-serif;
+            bottom: 30px;
+            @extend %flex;
+            &.new{
+                 background-color: $backgroundColor !important;
+                 color: $otherCaptionsColor;;
+                 position: relative !important;
+                 bottom: auto !important;
+            }
+            p{
+                font-size: x-large;
+                color: $backgroundColor;
+                font-weight: bold;
+            }
+            .caption-area{
+                padding-top: 5px;
+                text-align: center;
+                font-size: x-large;
+                color: $backgroundColor;
+                font-family: 'Josefin Sans', sans-serif;
+                width: 85%;
+                background-color: transparent;
+                &.new{
+                    color: $otherCaptionsColor;
+                }
+            }
+        }
+    }
+    .item{
+        position: relative;
+        h2{
+            color: $otherCaptionsColor;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: larger;
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            margin: 0;
+        }
+    }
+    .recipe-text{
+        width: 100%;
+        float: left;
+        p{
+            padding: 30px 10px 0 20px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: large;
+        }
+         .text-area{
+            padding: 2px;
+            text-align: justify;
+            color: black;
+            margin: 40px 0 0 20px;;
+            width: 86%;
+        }
+        .recipe-resources{
+            width: 30%;
+            float: left;
+            text-align: left;
+            font-size: medium;
+            color: $otherCaptionsColor;
+            .resources-area{
+                padding: 3px;
+                text-align: left;
+                float: right;
+                width: 85%;
+                margin-top: 40px;
+            }
+        }
+        .recipe-procedure{
+            width: 70%;
+            float: left;
+            text-align: justify;
+            font-size: medium;
+        }
+    }
+    .recipe-edit{
+        width: 100%;
+        float: left;
+        height: 50px;
+        margin-top: 10px;
+        .recipe-save{
+            @extend %edit;
+            border-right: 1px solid $borderColor;
+        }
+        .recipe-cancel{
+            @extend %edit;
+        }
+    }
+}
+
+%edit {
+    width: calc(50% - 1px);
+    height: 95%;
+    float: left;
+    cursor: pointer;
+    p{
+        width: 20px;
+    }
+    img{
+        margin-right: 5px;
+    }
+}
+
+.editable p{
+    border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+

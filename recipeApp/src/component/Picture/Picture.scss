@@ -1,0 +1,74 @@
+%flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#picture-modal{
+   @extend %flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    float: left;
+    height: 100%;
+    width: 100%;
+    left: 0px; top: 0px;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    .modal-content{
+        width: calc(100% - 100px);
+        height: calc(100% - 100px);
+        background-color: #fafafa;
+    }
+    #myCanvas{
+            transform-origin: left top;
+            position: absolute;
+            left: 50px;
+            top: 130px;
+            border-bottom: 1px solid #e6e6e6;
+            border-top: 1px solid #e6e6e6;
+            background-color: white;
+    }
+    #picture-options{
+        width: 100%;
+        height: 80px;
+        @extend %flex;
+        .picture-option{
+            width: 40%;
+            float: left;
+            @extend %flex;
+            .option-caption{
+            width: 40%;
+            float: left;
+            font-size: x-large;
+            
+           }
+            input{
+                height: 10px;
+                font-size: medium;
+            }
+            select{
+                height: 40px;
+                font-size: medium;
+            }
+        }
+    }
+    .picture-edit{
+        width: 60%;
+        position: absolute;
+        height: 70px;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        .picture-button{
+                width: calc(50% - 0.5px);
+                float: left;
+                height: 95%;
+               @extend %flex;
+                &.save{
+                        border-right: 1px solid #e6e6e6;
+                }
+            
+        }
+    }
+}
