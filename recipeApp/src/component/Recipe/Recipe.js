@@ -2,15 +2,12 @@ import React, { Component } from 'react';
 import './Recipe.css';
 
 import addImage from '../../assets/image.png';
-import inLove from '../../assets/in-love.png';
-import confused from '../../assets/confused.png';
 import edit from '../../assets/editBlack.png';
 import remove from '../../assets/cancelBlack.png';
 import ok from '../../assets/ok-button.png';
 import cancel from '../../assets/cancel-button.png';
 import whiteHeart from '../../assets/like.png';
 import redHeart from '../../assets/liked.png';
-import ReactDOM from 'react-dom';
 import palette from '../../assets/palette.png';
 import Picture from '../Picture/Picture';
 
@@ -48,10 +45,7 @@ class Recipe extends Component {
     }
     
     render () {
-        const {resources, procedure, likesCount , img, caption, liked} = this.props.recipe;
-        let res = "";
-        let counter = -1;
-
+        const {resources, procedure, img, caption} = this.props.recipe;
         const listResources = resources.replace(/\n/g, ",").split(",").map((item) =>
             <li key={item}>{item}</li>
         );

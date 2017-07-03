@@ -24,7 +24,7 @@ class RecipeList extends Component {
   }
   
   render() {
-    const {recipes, fetching} = this.props;
+    const {recipes } = this.props;
     return (
       <div id="recipeList-container">
          {Object.keys(recipes).map((item) => {

@@ -29,31 +29,25 @@ export default function reducer(state={
          case "UPDATE_RECIPE":{
             return {
                 ...state,
-                recipes: state.recipes.map(r => r.id == action.payload.id ? action.payload : r)
+                recipes: state.recipes.map(r => r.id === action.payload.id ? action.payload : r)
             }
         }
         case "REMOVE_RECIPE":{
             return {
                 ...state,
-                recipes: state.recipes.filter(r => r.id != action.payload)
-            }
-        }
-        case "ADD_RECIPE":{
-            return {
-                ...state,
-                recipes: [...state.recipes, action.payload ]
+                recipes: state.recipes.filter(r => r.id !== action.payload)
             }
         }
         case "THUMB_UP":{
             return {
                 ...state,
-                recipes: state.recipes.map(r => r.id == action.payload ? {...r, liked: 1, likesCount : r.likesCount +1} : r)
+                recipes: state.recipes.map(r => r.id === action.payload ? {...r, liked: 1, likesCount : r.likesCount +1} : r)
             }
         }
          case "THUMB_DOWN":{
             return {
                 ...state,
-                recipes: state.recipes.map(r => r.id == action.payload ? {...r, liked: 0,  likesCount : r.likesCount - 1} : r)
+                recipes: state.recipes.map(r => r.id === action.payload ? {...r, liked: 0,  likesCount : r.likesCount - 1} : r)
             }
         }
 
