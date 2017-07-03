@@ -1,0 +1,2 @@
+- first install npm with command - npm install
+- then run server with command - node server.js

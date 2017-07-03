@@ -7,7 +7,6 @@ import { printError, hideError  } from '../../actions/toasterActions';
 class Toaster extends Component {
     render () {
         const {message, error} = this.props;
-        console.log('message : ',this.props.message)
         if (error){
             return(
                 <div className="toaster">

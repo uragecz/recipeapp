@@ -49,7 +49,6 @@ class Recipe extends Component {
     
     render () {
         const {resources, procedure, likesCount , img, caption, liked} = this.props.recipe;
-        if(this.props.recipe.id === 1)console.log('this.state.liked  render- ',this.state.liked);
         let res = "";
         let counter = -1;
 
@@ -230,10 +229,9 @@ class Recipe extends Component {
     }
 
     handleChange(atr,e){
-        var pattern=/^[a-zA-Z0-9\s,\.\-\:\(\)]*$/;
+        var pattern=/^[a-zA-Z0-9\s,.-:()]*$/;
         var matches = pattern.exec(e.target.value);
         var matchStatus = Boolean(matches);
-        console.log(matchStatus);
         if(matchStatus) this.setState({[atr] : e.target.value})
     }
 

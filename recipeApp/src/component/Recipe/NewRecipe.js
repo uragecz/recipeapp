@@ -93,12 +93,11 @@ class NewRecipe extends Component {
         e.preventDefault();
         let reader = new FileReader();
         let file = e.target.files[0];
-        console.log(reader,file);
         reader.onloadend = () => {
             var image = new Image();
             image.src = reader.result;
             image.onload = function() {
-                console.log(image.width);
+                //check width
             };
             this.setState({
                 img: reader.result
@@ -108,7 +107,7 @@ class NewRecipe extends Component {
     }
 
    handleChange(atr,e){
-        var pattern=/^[a-zA-Z0-9\s,\.\-\:\(\)]*$/;
+        var pattern=/^[a-zA-Z0-9\s,.-:()]*$/;
         var matches = pattern.exec(e.target.value);
         var matchStatus = Boolean(matches);
         if(matchStatus){

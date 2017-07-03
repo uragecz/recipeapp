@@ -5,7 +5,6 @@ import Toaster from './component/Toaster/Toaster.js';
  
 class App extends Component {
   render() {
-    console.log('app',this.props);
     return (
       <div className="App">
         <Toaster />

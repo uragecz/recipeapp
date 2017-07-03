@@ -34,7 +34,7 @@ class Picture extends Component {
                             <select value={this.state.color} onChange={this.handleChangeColor}>>
                                 <option value="Black">Černá</option>
                                 <option value="Red">Červená</option>
-                                <option selected value="Green">Zelená</option>
+                                <option value="Green">Zelená</option>
                                 <option value="Blue">Modrá</option>
                             </select>
                         </div>
@@ -79,7 +79,6 @@ class Picture extends Component {
    
 
     closeClickOut(e){
-        console.log(e.target.id);
         if(e.target.id === "picture-modal"){
             this.props.closePainting();
             document.removeEventListener("click",this.closeClickOut, false);
@@ -100,7 +99,6 @@ class Picture extends Component {
     drawPatch(e){
         let x = e.pageX - this.state.canvas.offsetLeft;
         let y = e.clientY - 120;
-        console.log(x,y)
         this.state.context.lineTo(x, y);
         this.state.context.stroke();
      }

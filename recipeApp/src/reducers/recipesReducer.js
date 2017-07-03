@@ -7,15 +7,12 @@ export default function reducer(state={
 }, action) {
     switch (action.type){
         case "FETCH_RECIPES":{
-            console.log('fething');
             return {...state, fetching: true}
         }
         case "FETCH_RECIPES_REJECTED":{
-            console.log('err');
             return {...state, fetching: false, error: action.payload}
         }
         case "FETCH_RECIPES_FULFILLED":{
-            console.log('done');
             return {
                 ...state,
                 fetching: false,
@@ -30,7 +27,6 @@ export default function reducer(state={
             }
         }
          case "UPDATE_RECIPE":{
-             console.log('UPDATE_RECIPE',action.payload);
             return {
                 ...state,
                 recipes: state.recipes.map(r => r.id == action.payload.id ? action.payload : r)
