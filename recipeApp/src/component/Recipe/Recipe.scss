@@ -5,6 +5,8 @@ $blackOpacity: rgba(0, 0, 0, 0.5);
 $textAreaLightsText:  #e5e5e5;
 $borderColor: #e6e6e6;
 
+$smallWidth: 480px;
+
 @keyframes animLike {
   0% {
     font-size: 55px;
@@ -154,15 +156,16 @@ $borderColor: #e6e6e6;
                 }
                 .image{
                     float: left;
-                    width: 75px;
+                    width: 20%;
                     position: absolute;
                     top: 50%;
+                    max-width: 85px;
                     transform: translate(-50%, -50%);
                     &.paint{
-                        left: 60%;
+                        left: 65%;
                     }
                     &.add{
-                        left: 40%;
+                        left: 35%;
                     }
                 }
                 .image:hover{
@@ -221,7 +224,7 @@ $borderColor: #e6e6e6;
                 font-size: x-large;
                 color: $backgroundColor;
                 font-family: 'Josefin Sans', sans-serif;
-                width: 85%;
+                width: 85%; 
                 background-color: transparent;
                 &.new{
                     color: $otherCaptionsColor;
@@ -244,6 +247,13 @@ $borderColor: #e6e6e6;
     .recipe-text{
         width: 100%;
         float: left;
+         .item{
+            @media only screen and(max-width: $smallWidth){
+                width: 100% !important;
+                display: flex;
+                justify-content: center;
+            }
+        }
         p{
             padding: 30px 10px 0 20px;
             font-family: 'Open Sans Condensed', sans-serif;

@@ -1,9 +1,18 @@
 $hover : #dfdddd;
+$mediumWidth: 850px;
+$smallWidth: 600px;
+
 
 #recipeList-container{
     width: 50%; height: 100%;
     max-width: 820px;
     margin: auto auto;
+    @media only screen and(max-width: $mediumWidth){
+        width: 70%;
+    }
+    @media only screen and(max-width: $smallWidth){
+        width: 98%;
+    }
     #addRecipe:hover{
         background-color: $hover !important;
     }

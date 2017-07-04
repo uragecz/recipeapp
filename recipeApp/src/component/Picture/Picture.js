@@ -69,7 +69,7 @@ class Picture extends Component {
             listContainer: container
         })
         context.canvas.height = window.innerHeight - 255;
-        context.canvas.width = window.innerWidth - 100;
+        context.canvas.width = window.innerWidth - 118;
         document.addEventListener('click',this.closeClickOut, false);
     }
 
