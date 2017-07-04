@@ -69,7 +69,7 @@ class Picture extends Component {
             listContainer: container
         })
         context.canvas.height = window.innerHeight - 255;
-        context.canvas.width = window.innerWidth - 117;
+        context.canvas.width = window.innerWidth - 100;
         document.addEventListener('click',this.closeClickOut, false);
     }
 
@@ -87,7 +87,7 @@ class Picture extends Component {
     
     beginNewPatch(e){
         let x = e.pageX - this.state.canvas.offsetLeft;
-        let y = e.clientY - 120;
+        let y = e.clientY - this.state.canvas.offsetTop;
         this.state.context.beginPath();
         this.state.context.moveTo(x, y);
         this.state.context.lineWidth = this.state.lineWidth;
@@ -98,7 +98,7 @@ class Picture extends Component {
 
     drawPatch(e){
         let x = e.pageX - this.state.canvas.offsetLeft;
-        let y = e.clientY - 120;
+        let y = e.clientY - this.state.canvas.offsetTop;
         this.state.context.lineTo(x, y);
         this.state.context.stroke();
      }

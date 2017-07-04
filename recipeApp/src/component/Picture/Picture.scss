@@ -28,8 +28,10 @@
             border-bottom: 1px solid #e6e6e6;
             border-top: 1px solid #e6e6e6;
             background-color: white;
+            cursor: url('../../assets/pen.png'), default;
     }
     #picture-options{
+        cursor: url('../../assets/pen.png'), default;
         width: 100%;
         height: 80px;
         @extend %flex;
