@@ -96,7 +96,7 @@ class Recipe extends Component {
                         <div className="item recipe-resources">
                             <h2>SUROVINY</h2>
                             {this.state.editable ?
-                                    <textarea  onChange={this.handleChange.bind(this,"resources")} value={this.state.resources} className="resources-area" rows="11" />
+                                    <textarea  onChange={this.handleChange.bind(this,"resources")} value={this.state.resources} className="resources-area" rows="10" />
                             : <p>{listResources}</p>
                             }
                         </div>
