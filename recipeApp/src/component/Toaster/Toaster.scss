@@ -12,20 +12,21 @@
     align-items: center;
     height: 80px;
     animation: showToaster 3s;
+    z-index: 50;
 }
 
- @keyframes showToaster {
-  0% {
-    bottom: -80px; 
-  }
-  20%{
-    bottom: 20px;
-  }
-  80% {
-   bottom: 19px;
-  }
-  100%{
-    bottom: -80px;
-    display: none;
-  }
+@keyframes showToaster {
+    0% {
+        bottom: -80px; 
+    }
+    20%{
+        bottom: 20px;
+    }
+    80% {
+    bottom: 19px;
+    }
+    100%{
+        bottom: -80px;
+        display: none;
+    }
 }

@@ -50,7 +50,6 @@ export default function reducer(state={
                 recipes: state.recipes.map(r => r.id === action.payload ? {...r, liked: 0,  likesCount : r.likesCount - 1} : r)
             }
         }
-
         default:
             break;
     }

@@ -58,7 +58,7 @@ class Picture extends Component {
             </div>
         )
     }
-
+    
     componentDidMount () {
         let canvas = document.getElementById('myCanvas');
         let context = canvas.getContext('2d');
@@ -77,7 +77,6 @@ class Picture extends Component {
       document.removeEventListener("click",this.closeClickOut, false);
    }
    
-
     closeClickOut(e){
         if(e.target.id === "picture-modal"){
             this.props.closePainting();

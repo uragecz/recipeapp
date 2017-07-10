@@ -21,14 +21,14 @@
         background-color: #fafafa;
     }
     #myCanvas{
-            transform-origin: left top;
-            position: absolute;
-            left: 50px;
-            top: 130px;
-            border-bottom: 1px solid #e6e6e6;
-            border-top: 1px solid #e6e6e6;
-            background-color: white;
-            cursor: url('../../assets/pen.png'), default;
+        transform-origin: left top;
+        position: absolute;
+        left: 50px;
+        top: 130px;
+        border-bottom: 1px solid #e6e6e6;
+        border-top: 1px solid #e6e6e6;
+        background-color: white;
+        cursor: url('../../assets/pen.png'), default;
     }
     #picture-options{
         cursor: url('../../assets/pen.png'), default;
@@ -40,11 +40,10 @@
             float: left;
             @extend %flex;
             .option-caption{
-            width: 40%;
-            float: left;
-            font-size: x-large;
-            
-           }
+                width: 40%;
+                float: left;
+                font-size: x-large;
+            }
             input{
                 height: 10px;
                 font-size: medium;
@@ -63,14 +62,13 @@
         left: 50%;
         transform: translate(-50%, 0);
         .picture-button{
-                width: calc(50% - 0.5px);
-                float: left;
-                height: 95%;
-               @extend %flex;
-                &.save{
-                        border-right: 1px solid #e6e6e6;
-                }
-            
+            width: calc(50% - 0.5px);
+            float: left;
+            height: 95%;
+            @extend %flex;
+            &.save{
+                    border-right: 1px solid #e6e6e6;
+            }
         }
     }
 }
