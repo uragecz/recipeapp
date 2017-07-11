@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './RecipeList.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchRecipes, addRecipe, updateRecipe, thumbDown, thumbUp, removeRecipe  } from '../../actions/recipesActions';

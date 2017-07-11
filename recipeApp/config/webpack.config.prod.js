@@ -13,6 +13,7 @@ const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const paths = require('./paths');
 const getClientEnvironment = require('./env');
 
+
 // Webpack uses `publicPath` to determine where the app is being served from.
 // It requires a trailing slash, or the file assets will get an incorrect path.
 const publicPath = paths.servedPath;
@@ -148,6 +149,12 @@ module.exports = {
         options: {
           name: 'static/media/[name].[hash:8].[ext]',
         },
+      },
+      {
+        test:  /\.scss$/,
+        use:  ExtractTextPlugin.extract({
+          use: ['css-loader', 'sass-loader']
+        })
       },
       // "url" loader works just like "file" loader but it also embeds
       // assets smaller than specified size as data URLs to avoid requests.
