@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Recipe.css';
+import './Recipe.scss';
 
 import addImage from '../../assets/image.png';
 import edit from '../../assets/editBlack.png';

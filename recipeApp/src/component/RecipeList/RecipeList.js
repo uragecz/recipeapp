@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import { fetchRecipes, addRecipe, updateRecipe, thumbDown, thumbUp, removeRecipe  } from '../../actions/recipesActions';
 import Recipe from '../Recipe/Recipe';
 import NewRecipe from '../Recipe/NewRecipe';
-import './RecipeList.css';
+import './RecipeList.scss';
 
 class RecipeList extends Component {
     constructor (props) {
