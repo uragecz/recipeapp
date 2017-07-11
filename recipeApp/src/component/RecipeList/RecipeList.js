@@ -38,7 +38,6 @@ class RecipeList extends Component {
                     +
                     </div>
                 : <NewRecipe addNew={this.addRecipe} cancel={this.cancelNew}/>}
-                
             </div>
         );
     }
@@ -100,9 +99,7 @@ function matchDispatchToProps(dispatch){
 
 function mapStateToProps(state){
     return {
-        recipes: state.recipes.recipes,
-        fetching: state.recipes.fetching,
-        version: state.recipes.version
+        recipes: state.recipes.recipes
     }
 }
 
