@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './Toaster.css';
 import { bindActionCreators } from 'redux';
-import { printError, hideError  } from '../../actions/toasterActions';
+import { printError, hideError } from '../../actions/toasterActions';
 
 class Toaster extends Component {
     render () {
